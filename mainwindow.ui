@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>937</width>
-    <height>600</height>
+    <width>1156</width>
+    <height>783</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,14 @@
    <widget class="QPushButton" name="loadButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>40</y>
-      <width>88</width>
-      <height>27</height>
+      <x>120</x>
+      <y>90</y>
+      <width>131</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Laden...</string>
+     <string>Load...</string>
     </property>
    </widget>
   </widget>
@@ -33,7 +33,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>937</width>
+     <width>1156</width>
      <height>24</height>
     </rect>
    </property>
@@ -41,5 +41,25 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>loadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>175</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openDialog()</slot>
+ </slots>
 </ui>
