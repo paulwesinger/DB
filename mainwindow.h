@@ -5,6 +5,8 @@
 #include <QFileDialog>
 #include <QPushButton>
 
+#include "database.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,9 +19,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+     DataBase * db;
+
 protected slots:
     void openGeorge();
     void openRaika();
+
 
 private:
     void init();

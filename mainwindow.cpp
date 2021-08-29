@@ -6,18 +6,20 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <qdebug.h>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    init();
+    init();  // inkl. database
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete db;
 }
 
 void MainWindow::openGeorge() {
@@ -79,6 +81,19 @@ void MainWindow::openRaika() {
 
 // private Methods
 void MainWindow::init() {
+    db = new DataBase;
+    bool ok = db->connectToDatabase();
+    if ( ok ) {
+        ui->lUser->setText(db->getUser());
+        ui->lDB -> setText(db->getDatabase());
+        ui->cbConnected->setChecked(true);
+    }
+    else {
+        ui->lUser->setText("<None>");
+        ui->lDB -> setText("<None");
+        ui->cbConnected->setChecked(false);
+        ui->textBrowser->setText(db->ErrorMessage);
 
+    }
 
 }
