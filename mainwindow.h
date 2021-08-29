@@ -17,8 +17,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
-    void openDialog();
+protected slots:
+    void openGeorge();
+    void openRaika();
 
 private:
     void init();

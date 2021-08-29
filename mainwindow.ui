@@ -13,21 +13,7 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="loadButton">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>90</y>
-      <width>131</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Load...</string>
-    </property>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -37,29 +23,93 @@
      <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuDatei">
+    <property name="title">
+     <string>Datei</string>
+    </property>
+    <addaction name="actionffnen"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionBeenden"/>
+   </widget>
+   <widget class="QMenu" name="menuimport">
+    <property name="title">
+     <string>import</string>
+    </property>
+    <addaction name="actionRaika"/>
+    <addaction name="actionGeorge"/>
+   </widget>
+   <widget class="QMenu" name="menuSQL">
+    <property name="title">
+     <string>SQL</string>
+    </property>
+   </widget>
+   <addaction name="menuDatei"/>
+   <addaction name="menuimport"/>
+   <addaction name="menuSQL"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionffnen">
+   <property name="text">
+    <string>Öffnen</string>
+   </property>
+  </action>
+  <action name="actionBeenden">
+   <property name="text">
+    <string>Beenden</string>
+   </property>
+  </action>
+  <action name="actionRaika">
+   <property name="text">
+    <string>Raika</string>
+   </property>
+  </action>
+  <action name="actionGeorge">
+   <property name="text">
+    <string>George</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>loadButton</sender>
-   <signal>clicked()</signal>
+   <sender>actionGeorge</sender>
+   <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
-   <slot>openDialog()</slot>
+   <slot>openGeorge()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>177</x>
-     <y>149</y>
+     <x>-1</x>
+     <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>175</x>
-     <y>212</y>
+     <x>577</x>
+     <y>391</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRaika</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openRaika()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>577</x>
+     <y>391</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>openDialog()</slot>
+  <slot>openGeorge()</slot>
+  <slot>openRaika()</slot>
  </slots>
 </ui>
